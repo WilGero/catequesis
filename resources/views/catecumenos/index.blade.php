@@ -1,12 +1,14 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina Catecumenos</title>
-</head>
-<body>
-    <h1>Bienvenido a la vista Catecumenos</h1>
-</body>
-</html>
+@extends('layouts.plantilla')
+@section('title','Pagina Catecumenos')
+
+@section('content')
+    <h1>Bienvenido a la lista de Catecumenos</h1>
+    <ul>
+        @foreach($catecumenos as $catecumeno)
+            <li>
+                <a href="{{route('catecumenos.show',$catecumeno->id)}}">{{$catecumeno->name}}</a>    
+            </li>
+        @endforeach
+    </ul>
+    {{$catecumenos->links()}}
+@endsection

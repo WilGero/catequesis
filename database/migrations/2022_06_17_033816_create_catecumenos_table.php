@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();//Integer unsigned increment
             $table->string('name');//Nombres
             $table->string('surname');//Apellidos
-            $table->date('birth');//Fecha de nacimiento
+            $table->date('birth')->nullable();//Fecha de nacimiento
             $table->timestamps();
         });
     }

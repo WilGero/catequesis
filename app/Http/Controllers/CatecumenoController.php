@@ -2,14 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Catecumeno;
 use Illuminate\Http\Request;
 
 class CatecumenoController extends Controller
 {
     public function index() {
-        return view('catecumenos.index');
+        // $catecumenos = Catecumeno::all();
+        $catecumenos = Catecumeno::paginate();
+        return view('catecumenos.index',compact('catecumenos'));
     }
-    public function show($catecumeno){
+    public function show(Catecumeno $catecumeno){
+        
         return view('catecumenos.show',compact('catecumeno'));
     }
     public function create(){
