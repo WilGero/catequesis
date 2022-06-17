@@ -19,4 +19,20 @@ class CatecumenoController extends Controller
     public function create(){
         return view('catecumenos.create');
     }
+    public function store(Request $request){
+       $catecumeno=new Catecumeno();
+       $catecumeno->name=$request->name;
+       $catecumeno->surname=$request->surname;
+       $catecumeno->birth=$request->birth;
+       $catecumeno->save(); 
+       // $catecumeno= Catecumeno::create($request->all());
+        return redirect()->route('catecumenos.show',$catecumeno);
+    }
+    public function edit(Catecumeno $catecumeno){
+        return view('catecumenos.edit',compact('catecumeno'));
+    }
+    public function update(Request $request,Catecumeno $catecumeno){
+        $catecumeno->update($request->all());
+        return redirect()->route('catecumenos.show',$catecumeno);
+    }
 }

@@ -3,6 +3,7 @@
 
 @section('content')
     <h1>Bienvenido a la lista de Catecumenos</h1>
+    <a href="{{route('catecumenos.create')}}">Registrar Catecumeno</a>
     <ul>
         @foreach($catecumenos as $catecumeno)
             <li>

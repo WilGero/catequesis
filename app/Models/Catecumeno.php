@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Catecumeno extends Model
 {
     use HasFactory;
+    // protected $fillable=['name','surname','birth'];
+    protected $guarded=[];
 }
