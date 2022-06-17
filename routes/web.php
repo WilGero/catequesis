@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CatecumenoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,3 +15,7 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get('/',HomeController::class);
+//Rutas para la vista catecumenos
+Route::resource('catecumenos', CatecumenoController::class);
+
+
