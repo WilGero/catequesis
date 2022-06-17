@@ -2,5 +2,5 @@
 @section('title','Catecumeno '.$catecumeno)
 
 @section('content')
-    <h1>Catecumeno/a {{$catecumeno}}</h1>
+    <h1>{{$catecumeno}}</h1>
 @endsection

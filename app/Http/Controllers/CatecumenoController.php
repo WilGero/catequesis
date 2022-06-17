@@ -12,4 +12,7 @@ class CatecumenoController extends Controller
     public function show($catecumeno){
         return view('catecumenos.show',compact('catecumeno'));
     }
+    public function create(){
+        return view('catecumenos.create');
+    }
 }
