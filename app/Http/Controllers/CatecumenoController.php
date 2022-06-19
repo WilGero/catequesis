@@ -35,4 +35,8 @@ class CatecumenoController extends Controller
         $catecumeno->update($request->all());
         return redirect()->route('catecumenos.show',$catecumeno);
     }
+    public function destroy(Catecumeno $catecumeno){
+        $catecumeno->delete();
+        return redirect()->route('catecumenos.index');
+    }
 }
